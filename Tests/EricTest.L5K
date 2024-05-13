@@ -1,0 +1,332 @@
+﻿(*********************************************
+
+  Import-Export
+  Version   := RSLogix 5000 v15.01
+  Owner     := Rahul Kulkarni, National Instruments
+  Exported  := Wed Sep 10 08:56:06 2008
+**********************************************)
+IE_VER := 2.6;
+
+CONTROLLER Eric_Test (ProcessorType := 1756-L61,
+                      Major := 15,
+                      TimeSlice := 20,
+                      RedundancyEnabled := 0,
+                      KeepTestEditsOnSwitchOver := 0,
+                      DataTablePadPercentage := 50,
+                      SecurityCode := 0,
+                      SFCExecutionControl := CurrentActive,
+                      SFCRestartPosition := MostRecent,
+                      SFCLastScan := DontScan,
+                      SerialNumber := 16#0035_8fff,
+                      MatchProjectToController := No)
+	MODULE Local (Parent := Local,
+	              ParentModPortId := 1,
+	              CatalogNumber := 1756-L61,
+	              Vendor := 1,
+	              ProductType := 14,
+	              ProductCode := 54,
+	              Major := 15,
+	              Minor := 3,
+	              PortLabel := RxBACKPLANE,
+	              ChassisSize := 4,
+	              Slot := 0,
+	              Mode := 2#0000_0000_0000_0001,
+	              CompatibleModule := 0,
+	              KeyMask := 2#0000_0000_0001_1111)
+	END_MODULE
+
+	MODULE EnetIP (Parent := Local,
+	               ParentModPortId := 1,
+	               CatalogNumber := 1756-EN2T/A,
+	               Vendor := 1,
+	               ProductType := 12,
+	               ProductCode := 166,
+	               Major := 1,
+	               Minor := 3,
+	               PortLabel := RxBACKPLANE,
+	               Slot := 1,
+	               Mode := 2#0000_0000_0000_0000,
+	               CompatibleModule := 1,
+	               KeyMask := 2#0000_0000_0001_1111)
+	END_MODULE
+
+	MODULE SmartCamera (Parent := EnetIP,
+	                    ParentModPortId := 2,
+	                    CatalogNumber := ETHERNET-MODULE,
+	                    Vendor := 1,
+	                    ProductType := 0,
+	                    ProductCode := 18,
+	                    Major := 1,
+	                    Minor := 1,
+	                    PortLabel := ENet,
+	                    NodeAddress := 10.0.61.140,
+	                    CommMethod := 536870916,
+	                    ConfigMethod := 8388612,
+	                    Mode := 2#0000_0000_0000_0000,
+	                    CompatibleModule := 0,
+	                    KeyMask := 2#0000_0000_0000_0000,
+	                    PrimCxnInputSize := 2,
+	                    PrimCxnOutputSize := 2,
+	                    SecCxnInputSize := 0,
+	                    SecCxnOutputSize := 0)
+			ConfigData  := [4,3,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+			CONNECTION Standard (Rate := 10000,
+			                     InputCxnPoint := 102,
+			                     OutputCxnPoint := 101,
+			                     EventID := 0)
+					InputData  := [[0,0]];
+					InputForceData := [0,0,1,0,0,0,0,0,0,0,0,0];
+					OutputData  := [[10,10]];
+					OutputForceData := [10,10,0,0,0,0,0,0,0,0,0,0];
+			END_CONNECTION
+
+	END_MODULE
+
+	MODULE EVS (Parent := EnetIP,
+	            ParentModPortId := 2,
+	            CatalogNumber := ETHERNET-MODULE,
+	            Vendor := 1,
+	            ProductType := 0,
+	            ProductCode := 18,
+	            Major := 1,
+	            Minor := 1,
+	            PortLabel := ENet,
+	            NodeAddress := 10.0.61.151,
+	            CommMethod := 536870916,
+	            ConfigMethod := 8388612,
+	            Mode := 2#0000_0000_0000_0000,
+	            CompatibleModule := 0,
+	            KeyMask := 2#0000_0000_0000_0000,
+	            PrimCxnInputSize := 2,
+	            PrimCxnOutputSize := 2,
+	            SecCxnInputSize := 0,
+	            SecCxnOutputSize := 0)
+			ConfigData  := [4,3,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+			CONNECTION Standard (Rate := 10000,
+			                     InputCxnPoint := 102,
+			                     OutputCxnPoint := 101,
+			                     EventID := 0)
+					InputData  := [[0,0]];
+					InputForceData := [0,0,1,0,0,0,0,0,0,0,0,0];
+					OutputData  := [[5,0]];
+					OutputForceData := [5,0,0,0,0,0,0,0,0,0,0,0];
+			END_CONNECTION
+
+	END_MODULE
+
+	MODULE NI_System (Parent := EnetIP,
+	                  ParentModPortId := 2,
+	                  CatalogNumber := ETHERNET-MODULE,
+	                  Vendor := 1,
+	                  ProductType := 0,
+	                  ProductCode := 18,
+	                  Major := 1,
+	                  Minor := 1,
+	                  PortLabel := ENet,
+	                  NodeAddress := 10.0.61.178,
+	                  CommMethod := 536870916,
+	                  ConfigMethod := 8388612,
+	                  Mode := 2#0000_0000_0000_0000,
+	                  CompatibleModule := 0,
+	                  KeyMask := 2#0000_0000_0000_0000,
+	                  PrimCxnInputSize := 2,
+	                  PrimCxnOutputSize := 2,
+	                  SecCxnInputSize := 0,
+	                  SecCxnOutputSize := 0)
+			ConfigData  := [4,3,[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+		,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]];
+			CONNECTION Standard (Rate := 10000,
+			                     InputCxnPoint := 102,
+			                     OutputCxnPoint := 101,
+			                     EventID := 0)
+					InputData  := [[0,0]];
+					InputForceData := [0,0,1,0,0,0,0,0,0,0,0,0];
+					OutputData  := [[10,20]];
+					OutputForceData := [10,20,0,0,0,0,0,0,0,0,0,0];
+			END_CONNECTION
+
+	END_MODULE
+
+	MODULE DCInput (Parent := Local,
+	                ParentModPortId := 1,
+	                CatalogNumber := 1756-IB16,
+	                Vendor := 1,
+	                ProductType := 7,
+	                ProductCode := 11,
+	                Major := 2,
+	                Minor := 5,
+	                PortLabel := RxBACKPLANE,
+	                Slot := 2,
+	                CommMethod := 536870913,
+	                ConfigMethod := 8388609,
+	                Mode := 2#0000_0000_0000_0000,
+	                CompatibleModule := 1,
+	                KeyMask := 2#0000_0000_0001_1111)
+			ConfigData  := [28,16,1,0,0,0,1,1,1,1,0,0,0,0,65535,65535];
+			CONNECTION StandardInput (Rate := 10000,
+			                          EventID := 0)
+					InputData  := [0,0];
+					InputForceData := [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+			END_CONNECTION
+
+	END_MODULE
+
+	MODULE DCOutput (Parent := Local,
+	                 ParentModPortId := 1,
+	                 CatalogNumber := 1756-OB8,
+	                 Vendor := 1,
+	                 ProductType := 7,
+	                 ProductCode := 18,
+	                 Major := 2,
+	                 Minor := 1,
+	                 PortLabel := RxBACKPLANE,
+	                 Slot := 3,
+	                 CommMethod := 536870913,
+	                 ConfigMethod := 8388609,
+	                 Mode := 2#0000_0000_0000_0000,
+	                 CompatibleModule := 1,
+	                 KeyMask := 2#0000_0000_0001_1111)
+			ConfigData  := [28,18,1,0,0,0,0,0,0,0];
+			CONNECTION Standard (Rate := 10000,
+			                     EventID := 0)
+					InputData  := [0,1];
+					InputForceData := [0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+					OutputData  := [1];
+					OutputForceData := [1,0,0,0,0,0,0,0,0,0,0,0];
+			END_CONNECTION
+
+	END_MODULE
+
+	TAG
+		Tag_BOOL : BOOL (RADIX := Decimal) := 0;
+		Tag_BOOL_Array : BOOL[32] (RADIX := Decimal) := [2#0,2#1,2#0,2#0,2#1,2#1,2#0,2#0,2#0,2#0,2#1,2#0,2#0,2#0,2#1,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+				,2#0,2#0,2#0,2#0,2#0];
+		Tag_BOOL_ArrayLong : BOOL[96] (RADIX := Decimal) := [2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+				,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+				,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+				,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0];
+		Tag_BOOL_ShortArray : BOOL[32] (RADIX := Decimal) := [2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0,2#0
+				,2#0,2#0,2#0,2#0,2#0];
+		Tag_BOOL_Unconnected : BOOL (RADIX := Decimal) := 1;
+		Tag_COUNTER : COUNTER  := [0,0,0];
+		Tag_COUNTER_Array : COUNTER[5]  := [[0,0,0],[0,0,0],[0,0,0],[0,0,0],[0,0,0]];
+		Tag_DINT : DINT (RADIX := Decimal) := 1;
+		Tag_DINT_Array : DINT[3] (RADIX := Decimal) := [3,-128,300];
+		Tag_INT : INT (RADIX := Decimal) := 1;
+		Tag_INT_Array : INT[3] (RADIX := Decimal) := [2,2,3];
+		Tag_Lights OF Local:3:O.Data (RADIX := Binary);
+		Tag_REAL : REAL (RADIX := Float) := -5.59999990e+000;
+		Tag_REAL_Array : REAL[3] (RADIX := Float) := [2.09999990e+000,0.00000000e+000,0.00000000e+000];
+		Tag_SINT : SINT (RADIX := Decimal) := 1;
+		Tag_SINT_Array : SINT[3] (RADIX := Decimal) := [1,2,3];
+		Tag_STRING : STRING  := [29,'this is a test blah blah blah$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+				];
+		Tag_STRING_Array : STRING[3]  := [[6,'Hello!$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+				],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+				],[0,'$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00$00'
+				]];
+		Test_COUNTER : COUNTER  := [-1476395008,1234,4567];
+	END_TAG
+
+		PROGRAM MainProgram (MAIN := MainRoutine,
+		                     MODE := 0,
+		                     DisableFlag := 0)
+				TAG
+				END_TAG
+
+				ROUTINE MainRoutine 
+						N: XIC(EVS:O.Data[0].0)OTE(Tag_Lights.0);
+				END_ROUTINE
+
+		END_PROGRAM
+
+		TASK MainTask (Type := CONTINUOUS,
+		               Rate := 10,
+		               Priority := 10,
+		               Watchdog := 500,
+		               DisableUpdateOutputs := No,
+		               InhibitTask := No)
+				MainProgram;
+		END_TASK
+
+CONFIG ASCII(XONXOFFEnable := 0,
+	             DeleteMode := 0,
+	             EchoMode := 0,
+	             TerminationChars := 65293,
+	             AppendChars := 2573,
+	             BufferSize := 82) END_CONFIG
+
+CONFIG ControllerDevice END_CONFIG
+
+CONFIG CST(SystemTimeMasterID := 0) END_CONFIG
+
+CONFIG DF1(DuplicateDetection := 1,
+	           ErrorDetection := BCC Error,
+	           EmbeddedResponseEnable := 0,
+	           DF1Mode := Pt to Pt,
+	           ACKTimeout := 50,
+	           NAKReceiveLimit := 3,
+	           ENQTransmitLimit := 3,
+	           TransmitRetries := 3,
+	           StationAddress := 0,
+	           ReplyMessageWait := 5,
+	           PollingMode := 1,
+	           MasterMessageTransmit := 0,
+	           NormalPollNodeFile := <NA>,
+	           NormalPollGroupSize := 0,
+	           PriorityPollNodeFile := <NA>,
+	           ActiveStationFile := <NA>,
+	           SlavePollTimeout := 3000,
+	           EOTSuppression := 0,
+	           MaxStationAddress := 31,
+	           TokenHoldFactor := 1) END_CONFIG
+
+CONFIG ExtendedDevice END_CONFIG
+
+CONFIG FaultLog END_CONFIG
+
+CONFIG FileManager END_CONFIG
+
+CONFIG ICP END_CONFIG
+
+CONFIG PCCC END_CONFIG
+
+CONFIG Redundancy END_CONFIG
+
+CONFIG SerialPort(BaudRate := 19200,
+	                  Parity := No Parity,
+	                  DataBits := 8 Bits of Data,
+	                  StopBits := 1 Stop Bit,
+	                  ComDriverId := DF1,
+	                  PendingComDriverId := DF1,
+	                  RTSOffDelay := 0,
+	                  RTSSendDelay := 0,
+	                  ControlLine := No Handshake,
+	                  PendingControlLine := No Handshake,
+	                  RemoteModeChangeFlag := 0,
+	                  PendingRemoteModeChangeFlag := 0,
+	                  ModeChangeAttentionChar := 27,
+	                  PendingModeChangeAttentionChar := 27,
+	                  SystemModeCharacter := 83,
+	                  PendingSystemModeCharacter := 83,
+	                  UserModeCharacter := 85,
+	                  PendingUserModeCharacter := 85) END_CONFIG
+
+CONFIG UserMemory END_CONFIG
+
+CONFIG WallClockTime(LocalTimeAdjustment := 0,
+	                     TimeZone := 0) END_CONFIG
+
+END_CONTROLLER
+
