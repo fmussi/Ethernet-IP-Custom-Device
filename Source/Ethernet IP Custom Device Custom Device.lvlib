@@ -4,6 +4,8 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">587235328</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Item Name="Controls" Type="Folder">
+		<Item Name="EIP Attribute Configuration.ctl" Type="VI" URL="../EIP Attribute Configuration.ctl"/>
+		<Item Name="EIP Attribute Direction.ctl" Type="VI" URL="../EIP Attribute Direction.ctl"/>
 		<Item Name="L5K Data Types.ctl" Type="VI" URL="../L5K Data Types.ctl"/>
 		<Item Name="L5K Internal Data.ctl" Type="VI" URL="../L5K Internal Data.ctl"/>
 		<Item Name="L5K Tag.ctl" Type="VI" URL="../L5K Tag.ctl"/>
