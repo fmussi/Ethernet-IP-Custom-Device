@@ -4,8 +4,10 @@
 	<Property Name="NI.Lib.SourceVersion" Type="Int">587235328</Property>
 	<Property Name="NI.Lib.Version" Type="Str">1.0.0.0</Property>
 	<Item Name="Controls" Type="Folder">
-		<Item Name="EIP Attribute Configuration.ctl" Type="VI" URL="../EIP Attribute Configuration.ctl"/>
+		<Item Name="assembly map key.ctl" Type="VI" URL="../assembly map key.ctl"/>
+		<Item Name="assembly map value.ctl" Type="VI" URL="../assembly map value.ctl"/>
 		<Item Name="EIP Attribute Direction.ctl" Type="VI" URL="../EIP Attribute Direction.ctl"/>
+		<Item Name="EIP Attribute Tag Configuration.ctl" Type="VI" URL="../EIP Attribute Tag Configuration.ctl"/>
 		<Item Name="L5K Data Types.ctl" Type="VI" URL="../L5K Data Types.ctl"/>
 		<Item Name="L5K Internal Data.ctl" Type="VI" URL="../L5K Internal Data.ctl"/>
 		<Item Name="L5K Tag.ctl" Type="VI" URL="../L5K Tag.ctl"/>
@@ -21,13 +23,13 @@
 	</Item>
 	<Item Name="RT" Type="Folder">
 		<Property Name="NI.SortType" Type="Int">3</Property>
-		<Item Name="EIP Attribute Info.ctl" Type="VI" URL="../EIP Attribute Info.ctl"/>
+		<Item Name="EIP Attribute Channel Info.ctl" Type="VI" URL="../EIP Attribute Channel Info.ctl"/>
 		<Item Name="EIP Message Type.ctl" Type="VI" URL="../EIP Message Type.ctl"/>
 		<Item Name="EIP Device Settings.ctl" Type="VI" URL="../EIP Device Settings.ctl"/>
+		<Item Name="EIP Tag Information.ctl" Type="VI" URL="../EIP Tag Information.ctl"/>
 		<Item Name="EIP Get Tag Info.vi" Type="VI" URL="../EIP Get Tag Info.vi"/>
 		<Item Name="EIP PLC Info.vi" Type="VI" URL="../EIP PLC Info.vi"/>
 		<Item Name="EIP Read Tags.vi" Type="VI" URL="../EIP Read Tags.vi"/>
-		<Item Name="EIP Tag Information.ctl" Type="VI" URL="../EIP Tag Information.ctl"/>
 		<Item Name="EIP Write Tags.vi" Type="VI" URL="../EIP Write Tags.vi"/>
 		<Item Name="Ethernet IP Custom Device RT Driver VI.vi" Type="VI" URL="../Ethernet IP Custom Device RT Driver VI.vi"/>
 		<Item Name="Print Error.vi" Type="VI" URL="../Print Error.vi"/>
@@ -38,9 +40,13 @@
 	<Item Name="System Explorer" Type="Folder">
 		<Item Name="SubVIs" Type="Folder">
 			<Item Name="Add Channel.vi" Type="VI" URL="../Add Channel.vi"/>
+			<Item Name="Create Attribute Section and Channels.vi" Type="VI" URL="../Create Attribute Section and Channels.vi"/>
+			<Item Name="Delete existing tags.vi" Type="VI" URL="../Delete existing tags.vi"/>
 			<Item Name="L5K Extract for MCLB.vi" Type="VI" URL="../L5K Extract for MCLB.vi"/>
 			<Item Name="L5K Reader Action.vi" Type="VI" URL="../L5K Reader Action.vi"/>
+			<Item Name="Transform Assemby into Channel List.vi" Type="VI" URL="../Transform Assemby into Channel List.vi"/>
 		</Item>
+		<Item Name="EIP Instance Section.vi" Type="VI" URL="../EIP Instance Section.vi"/>
 		<Item Name="EIP IO Folder.vi" Type="VI" URL="../EIP IO Folder.vi"/>
 		<Item Name="EIP Multi Channel.vi" Type="VI" URL="../EIP Multi Channel.vi"/>
 		<Item Name="EIP Single Channel.vi" Type="VI" URL="../EIP Single Channel.vi"/>

@@ -130,6 +130,21 @@
         <Path>Custom Devices\Ethernet IP Custom Device\Ethernet IP Custom Device Configuration.llb\EIP Sub Channel.vi</Path>
       </Item2Launch>
     </Page>
+    <Page>
+      <Name>
+        <eng>Instance</eng>
+        <loc>Instance</loc>
+      </Name>
+      <GUID>E3608E4E-6D2D-4A82-8806-F0E809947C73</GUID>
+      <Glyph>
+        <Type>To Application Data Dir</Type>
+        <Path>System Explorer\Glyphs\default fpga channel.png</Path>
+      </Glyph>
+      <Item2Launch>
+        <Type>To Common Doc Dir</Type>
+        <Path>Custom Devices\Ethernet IP Custom Device\Ethernet IP Custom Device Configuration.llb\EIP Instance Section.vi</Path>
+      </Item2Launch>
+    </Page>
   </Pages>
   <CustomXML>
     <Dummy></Dummy>

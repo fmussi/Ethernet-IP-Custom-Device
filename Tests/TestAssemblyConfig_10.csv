@@ -1,5 +1,4 @@
-name,direction,class,attribute,instance,offset,lenght
 Temperature,Input,4,3,100,20,4
 Mass,Input,4,3,100,8,4
 Volume,Input,4,3,100,12,4
-Density,Input,4,3,100,24,4
+Density,Output,4,3,100,24,4
